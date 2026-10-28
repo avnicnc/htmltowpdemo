@@ -39,6 +39,20 @@ function giapremix_register_headless_endpoints() {
             ),
         ),
     ) );
+
+    // Page endpoint returning full resolved ACF flexible sections
+    register_rest_route( 'giapremix/v1', '/page', array(
+        'methods'             => 'GET',
+        'callback'            => 'giapremix_rest_get_page',
+        'permission_callback' => '__return_true',
+        'args'                => array(
+            'slug' => array(
+                'required'          => false,
+                'default'           => 'home',
+                'sanitize_callback' => 'sanitize_title',
+            ),
+        ),
+    ) );
 }
 
 /**
@@ -190,3 +204,50 @@ function giapremix_rest_search( $request ) {
         'total'   => $query->found_posts,
     ) );
 }
+
+/**
+ * Get single page data with fully resolved ACF Flexible Content sections
+ */
+function giapremix_rest_get_page( $request ) {
+    $slug = $request->get_param( 'slug' ) ?: 'home';
+
+    $page = null;
+    if ( 'home' === $slug ) {
+        $front_id = get_option( 'page_on_front' );
+        if ( $front_id ) {
+            $page = get_post( $front_id );
+        }
+    }
+
+    if ( ! $page ) {
+        $page = get_page_by_path( $slug );
+    }
+
+    if ( ! $page ) {
+        // Try fallback query by post_name
+        $query = new WP_Query( array(
+            'post_type'      => array( 'page', 'post' ),
+            'name'           => $slug,
+            'posts_per_page' => 1,
+        ) );
+        if ( $query->have_posts() ) {
+            $page = $query->posts[0];
+        }
+    }
+
+    if ( ! $page ) {
+        return new WP_Error( 'rest_page_not_found', __( 'Page introuvable', 'giapremix' ), array( 'status' => 404 ) );
+    }
+
+    $post_id  = $page->ID;
+    $sections = function_exists( 'get_field' ) ? get_field( 'sections', $post_id ) : array();
+
+    return rest_ensure_response( array(
+        'id'       => $post_id,
+        'title'    => get_the_title( $post_id ),
+        'slug'     => $page->post_name,
+        'status'   => $page->post_status,
+        'sections' => is_array( $sections ) ? $sections : array(),
+    ) );
+}
+
