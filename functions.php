@@ -24,3 +24,7 @@ require_once get_template_directory() . '/inc/nav-walker.php';
 // Search & AJAX
 require_once get_template_directory() . '/inc/ajax-functions.php';
 
+// Headless REST API Bridge
+require_once get_template_directory() . '/inc/rest-api.php';
+
+
