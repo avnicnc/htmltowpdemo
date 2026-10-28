@@ -1,0 +1,812 @@
+{
+  "key": "group_page_sections",
+  "title": "Page Sections",
+  "fields": [
+    {
+      "key": "field_page_sections",
+      "label": "Sections",
+      "name": "sections",
+      "type": "flexible_content",
+      "instructions": "Add, remove, and reorder content sections on this page.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "acfe_flexible_advanced": 1,
+      "acfe_flexible_modal_edit": {
+        "acfe_flexible_modal_edit_enabled": 0
+      },
+      "layouts": {
+        "layout_hero": {
+          "key": "layout_hero",
+          "name": "hero",
+          "label": "Hero Section",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_hero_section_id",
+              "label": "Section ID",
+              "name": "section_id",
+              "type": "text",
+              "instructions": "Unique anchor ID without # (e.g. hero-banner)",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_hero_extra_class",
+              "label": "Extra Class",
+              "name": "extra_class",
+              "type": "text",
+              "instructions": "Optional custom CSS classes",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_hero_slides",
+              "label": "Hero Slides",
+              "name": "slides",
+              "type": "repeater",
+              "instructions": "Manage slider slides",
+              "min": 1,
+              "max": 10,
+              "layout": "block",
+              "button_label": "Add Slide",
+              "sub_fields": [
+                {
+                  "key": "field_hero_bg_image",
+                  "label": "Background Image",
+                  "name": "background_image",
+                  "type": "image",
+                  "instructions": "Recommended size: 1920x1080 pixels (16:9)",
+                  "return_format": "array",
+                  "preview_size": "medium",
+                  "library": "all",
+                  "wrapper": { "width": "50" }
+                },
+                {
+                  "key": "field_hero_is_dark",
+                  "label": "Dark Variant",
+                  "name": "is_dark_variant",
+                  "type": "true_false",
+                  "instructions": "Enable dark night-mode variant overlay",
+                  "default_value": 0,
+                  "ui": 1,
+                  "wrapper": { "width": "50" }
+                },
+                {
+                  "key": "field_hero_heading",
+                  "label": "Main Heading",
+                  "name": "heading",
+                  "type": "textarea",
+                  "rows": 3,
+                  "instructions": "Slide main heading (supports line breaks)",
+                  "wrapper": { "width": "75" }
+                },
+                {
+                  "key": "field_hero_heading_tag",
+                  "label": "Heading Tag",
+                  "name": "heading_tag",
+                  "type": "select",
+                  "instructions": "Semantic tag for SEO",
+                  "choices": { "h1": "H1", "h2": "H2", "h3": "H3", "p": "P" },
+                  "default_value": "h1",
+                  "wrapper": { "width": "25" }
+                },
+                {
+                  "key": "field_hero_highlight",
+                  "label": "Heading Highlight Text",
+                  "name": "heading_highlight",
+                  "type": "text",
+                  "instructions": "Sub-phrase rendered in yellow/accent style",
+                  "wrapper": { "width": "100" }
+                },
+                {
+                  "key": "field_hero_description",
+                  "label": "Description",
+                  "name": "description",
+                  "type": "textarea",
+                  "rows": 3,
+                  "instructions": "Introductory paragraph under the heading",
+                  "wrapper": { "width": "100" }
+                },
+                {
+                  "key": "field_hero_btn1_text",
+                  "label": "Primary Button Text",
+                  "name": "button_1_text",
+                  "type": "text",
+                  "wrapper": { "width": "50" }
+                },
+                {
+                  "key": "field_hero_btn1_url",
+                  "label": "Primary Button URL",
+                  "name": "button_1_url",
+                  "type": "text",
+                  "wrapper": { "width": "50" }
+                },
+                {
+                  "key": "field_hero_btn2_text",
+                  "label": "Secondary Button Text",
+                  "name": "button_2_text",
+                  "type": "text",
+                  "wrapper": { "width": "50" }
+                },
+                {
+                  "key": "field_hero_btn2_url",
+                  "label": "Secondary Button URL",
+                  "name": "button_2_url",
+                  "type": "text",
+                  "wrapper": { "width": "50" }
+                },
+                {
+                  "key": "field_hero_standards",
+                  "label": "Compliance Badges / Standards",
+                  "name": "standards",
+                  "type": "repeater",
+                  "instructions": "Standard certifications (e.g. EN 15154, ANSI Z358.1)",
+                  "layout": "table",
+                  "button_label": "Add Standard",
+                  "sub_fields": [
+                    {
+                      "key": "field_hero_std_icon",
+                      "label": "Icon",
+                      "name": "icon",
+                      "type": "image",
+                      "return_format": "array",
+                      "preview_size": "thumbnail",
+                      "wrapper": { "width": "20" }
+                    },
+                    {
+                      "key": "field_hero_std_code",
+                      "label": "Standard Code",
+                      "name": "code",
+                      "type": "text",
+                      "wrapper": { "width": "40" }
+                    },
+                    {
+                      "key": "field_hero_std_desc",
+                      "label": "Description",
+                      "name": "description",
+                      "type": "text",
+                      "wrapper": { "width": "40" }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "layout_products": {
+          "key": "layout_products",
+          "name": "products",
+          "label": "Products Carousel",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_prod_section_id",
+              "label": "Section ID",
+              "name": "section_id",
+              "type": "text",
+              "instructions": "Unique anchor ID (e.g. produits)",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_prod_extra_class",
+              "label": "Extra Class",
+              "name": "extra_class",
+              "type": "text",
+              "instructions": "Optional CSS classes",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_prod_title",
+              "label": "Section Title",
+              "name": "title",
+              "type": "text",
+              "instructions": "Main title (e.g. Solutions de sécurité industrielle pour)",
+              "wrapper": { "width": "75" }
+            },
+            {
+              "key": "field_prod_title_tag",
+              "label": "Title Tag",
+              "name": "title_tag",
+              "type": "select",
+              "choices": { "h2": "H2", "h3": "H3", "h1": "H1" },
+              "default_value": "h2",
+              "wrapper": { "width": "25" }
+            },
+            {
+              "key": "field_prod_highlight",
+              "label": "Title Highlight",
+              "name": "title_highlight",
+              "type": "text",
+              "instructions": "Accent highlight phrase (e.g. environnements dangereux)",
+              "wrapper": { "width": "100" }
+            },
+            {
+              "key": "field_prod_btn_text",
+              "label": "Header Button Text",
+              "name": "button_text",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_prod_btn_url",
+              "label": "Header Button URL",
+              "name": "button_url",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_prod_list",
+              "label": "Products List",
+              "name": "products_list",
+              "type": "repeater",
+              "instructions": "Product carousel cards",
+              "layout": "block",
+              "button_label": "Add Product",
+              "sub_fields": [
+                {
+                  "key": "field_prod_item_img",
+                  "label": "Product Image",
+                  "name": "image",
+                  "type": "image",
+                  "instructions": "Card thumbnail (PNG with transparent background)",
+                  "return_format": "array",
+                  "preview_size": "medium",
+                  "wrapper": { "width": "35" }
+                },
+                {
+                  "key": "field_prod_item_title",
+                  "label": "Product Title / Model",
+                  "name": "title",
+                  "type": "text",
+                  "wrapper": { "width": "35" }
+                },
+                {
+                  "key": "field_prod_item_detail_img",
+                  "label": "Detail / Modal Image",
+                  "name": "detail_image",
+                  "type": "image",
+                  "instructions": "High-res popup image (optional, falls back to product image)",
+                  "return_format": "array",
+                  "preview_size": "medium",
+                  "wrapper": { "width": "20" }
+                },
+                {
+                  "key": "field_prod_item_active",
+                  "label": "Featured / Active Style",
+                  "name": "is_active",
+                  "type": "true_false",
+                  "ui": 1,
+                  "wrapper": { "width": "10" }
+                }
+              ]
+            }
+          ]
+        },
+        "layout_categories": {
+          "key": "layout_categories",
+          "name": "categories",
+          "label": "Top Categories Grid",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_cat_section_id",
+              "label": "Section ID",
+              "name": "section_id",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_cat_extra_class",
+              "label": "Extra Class",
+              "name": "extra_class",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_cat_title",
+              "label": "Section Title",
+              "name": "title",
+              "type": "text",
+              "instructions": "Title text (e.g. Nos meilleures)",
+              "wrapper": { "width": "75" }
+            },
+            {
+              "key": "field_cat_title_tag",
+              "label": "Title Tag",
+              "name": "title_tag",
+              "type": "select",
+              "choices": { "h2": "H2", "h3": "H3", "h1": "H1" },
+              "default_value": "h2",
+              "wrapper": { "width": "25" }
+            },
+            {
+              "key": "field_cat_highlight",
+              "label": "Title Highlight",
+              "name": "title_highlight",
+              "type": "text",
+              "instructions": "Highlight word (e.g. catégories)",
+              "wrapper": { "width": "100" }
+            },
+            {
+              "key": "field_cat_btn_text",
+              "label": "Button Text",
+              "name": "button_text",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_cat_btn_url",
+              "label": "Button URL",
+              "name": "button_url",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_cat_list",
+              "label": "Categories List",
+              "name": "categories_list",
+              "type": "repeater",
+              "instructions": "8 category cards in grid",
+              "min": 1,
+              "max": 12,
+              "layout": "table",
+              "button_label": "Add Category",
+              "sub_fields": [
+                {
+                  "key": "field_cat_item_img",
+                  "label": "Image",
+                  "name": "image",
+                  "type": "image",
+                  "instructions": "Square thumbnail (e.g. 135x135)",
+                  "return_format": "array",
+                  "preview_size": "thumbnail",
+                  "wrapper": { "width": "30" }
+                },
+                {
+                  "key": "field_cat_item_label",
+                  "label": "Category Label",
+                  "name": "label",
+                  "type": "text",
+                  "wrapper": { "width": "40" }
+                },
+                {
+                  "key": "field_cat_item_url",
+                  "label": "Link URL",
+                  "name": "url",
+                  "type": "text",
+                  "wrapper": { "width": "30" }
+                }
+              ]
+            }
+          ]
+        },
+        "layout_expertise": {
+          "key": "layout_expertise",
+          "name": "expertise",
+          "label": "Expertise & Hazardous Environments",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_exp_section_id",
+              "label": "Section ID",
+              "name": "section_id",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_exp_extra_class",
+              "label": "Extra Class",
+              "name": "extra_class",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_exp_image",
+              "label": "Featured Media / Workshop Image",
+              "name": "image",
+              "type": "image",
+              "instructions": "Factory workshop photograph (e.g. 1536x1152)",
+              "return_format": "array",
+              "preview_size": "medium",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_exp_btn_url",
+              "label": "Button URL",
+              "name": "button_url",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_exp_title",
+              "label": "Section Title",
+              "name": "title",
+              "type": "text",
+              "wrapper": { "width": "75" }
+            },
+            {
+              "key": "field_exp_title_tag",
+              "label": "Title Tag",
+              "name": "title_tag",
+              "type": "select",
+              "choices": { "h2": "H2", "h3": "H3", "h1": "H1" },
+              "default_value": "h2",
+              "wrapper": { "width": "25" }
+            },
+            {
+              "key": "field_exp_highlight",
+              "label": "Title Highlight",
+              "name": "title_highlight",
+              "type": "text",
+              "wrapper": { "width": "100" }
+            },
+            {
+              "key": "field_exp_desc",
+              "label": "Content Copy",
+              "name": "description",
+              "type": "textarea",
+              "rows": 4,
+              "instructions": "Explanatory paragraphs about Swedish manufacturing & compliance",
+              "wrapper": { "width": "100" }
+            },
+            {
+              "key": "field_exp_btn_text",
+              "label": "Button Text",
+              "name": "button_text",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            }
+          ]
+        },
+        "layout_news": {
+          "key": "layout_news",
+          "name": "news",
+          "label": "Latest News & Updates",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_news_section_id",
+              "label": "Section ID",
+              "name": "section_id",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_news_extra_class",
+              "label": "Extra Class",
+              "name": "extra_class",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_news_title",
+              "label": "Section Title",
+              "name": "title",
+              "type": "text",
+              "wrapper": { "width": "75" }
+            },
+            {
+              "key": "field_news_title_tag",
+              "label": "Title Tag",
+              "name": "title_tag",
+              "type": "select",
+              "choices": { "h2": "H2", "h3": "H3" },
+              "default_value": "h2",
+              "wrapper": { "width": "25" }
+            },
+            {
+              "key": "field_news_highlight",
+              "label": "Title Highlight",
+              "name": "title_highlight",
+              "type": "text",
+              "wrapper": { "width": "100" }
+            },
+            {
+              "key": "field_news_btn_text",
+              "label": "Button Text",
+              "name": "button_text",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_news_btn_url",
+              "label": "Button URL",
+              "name": "button_url",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_news_list",
+              "label": "News Articles",
+              "name": "news_list",
+              "type": "repeater",
+              "layout": "block",
+              "button_label": "Add Article",
+              "sub_fields": [
+                {
+                  "key": "field_news_item_img",
+                  "label": "Featured Image",
+                  "name": "image",
+                  "type": "image",
+                  "return_format": "array",
+                  "preview_size": "medium",
+                  "wrapper": { "width": "30" }
+                },
+                {
+                  "key": "field_news_item_cat",
+                  "label": "Category Tag",
+                  "name": "category",
+                  "type": "text",
+                  "instructions": "e.g. Nouvelles or Actualités produits",
+                  "wrapper": { "width": "20" }
+                },
+                {
+                  "key": "field_news_item_date",
+                  "label": "Date",
+                  "name": "date",
+                  "type": "text",
+                  "instructions": "e.g. Oct 9, 2026",
+                  "wrapper": { "width": "20" }
+                },
+                {
+                  "key": "field_news_item_url",
+                  "label": "Article Link",
+                  "name": "url",
+                  "type": "text",
+                  "wrapper": { "width": "30" }
+                },
+                {
+                  "key": "field_news_item_title",
+                  "label": "Title",
+                  "name": "title",
+                  "type": "text",
+                  "wrapper": { "width": "50" }
+                },
+                {
+                  "key": "field_news_item_excerpt",
+                  "label": "Excerpt",
+                  "name": "excerpt",
+                  "type": "textarea",
+                  "rows": 2,
+                  "wrapper": { "width": "50" }
+                }
+              ]
+            }
+          ]
+        },
+        "layout_information": {
+          "key": "layout_information",
+          "name": "information",
+          "label": "Information Shortcuts",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_info_section_id",
+              "label": "Section ID",
+              "name": "section_id",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_info_extra_class",
+              "label": "Extra Class",
+              "name": "extra_class",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_info_title",
+              "label": "Section Title",
+              "name": "title",
+              "type": "textarea",
+              "rows": 2,
+              "wrapper": { "width": "75" }
+            },
+            {
+              "key": "field_info_title_tag",
+              "label": "Title Tag",
+              "name": "title_tag",
+              "type": "select",
+              "choices": { "h2": "H2", "h3": "H3" },
+              "default_value": "h2",
+              "wrapper": { "width": "25" }
+            },
+            {
+              "key": "field_info_desc",
+              "label": "Description",
+              "name": "description",
+              "type": "textarea",
+              "rows": 3,
+              "wrapper": { "width": "100" }
+            },
+            {
+              "key": "field_info_shortcuts",
+              "label": "Shortcuts Cards",
+              "name": "shortcuts",
+              "type": "repeater",
+              "min": 1,
+              "max": 6,
+              "layout": "table",
+              "button_label": "Add Shortcut",
+              "sub_fields": [
+                {
+                  "key": "field_info_sc_icon",
+                  "label": "Icon",
+                  "name": "icon",
+                  "type": "image",
+                  "return_format": "array",
+                  "preview_size": "thumbnail",
+                  "wrapper": { "width": "20" }
+                },
+                {
+                  "key": "field_info_sc_title",
+                  "label": "Title",
+                  "name": "title",
+                  "type": "text",
+                  "wrapper": { "width": "30" }
+                },
+                {
+                  "key": "field_info_sc_sub",
+                  "label": "Subtitle",
+                  "name": "subtitle",
+                  "type": "text",
+                  "wrapper": { "width": "30" }
+                },
+                {
+                  "key": "field_info_sc_url",
+                  "label": "Link URL",
+                  "name": "url",
+                  "type": "text",
+                  "wrapper": { "width": "20" }
+                }
+              ]
+            }
+          ]
+        },
+        "layout_faq": {
+          "key": "layout_faq",
+          "name": "faq",
+          "label": "FAQ Accordion",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_faq_section_id",
+              "label": "Section ID",
+              "name": "section_id",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_faq_extra_class",
+              "label": "Extra Class",
+              "name": "extra_class",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_faq_title",
+              "label": "Section Title",
+              "name": "title",
+              "type": "textarea",
+              "rows": 2,
+              "wrapper": { "width": "75" }
+            },
+            {
+              "key": "field_faq_title_tag",
+              "label": "Title Tag",
+              "name": "title_tag",
+              "type": "select",
+              "choices": { "h2": "H2", "h3": "H3" },
+              "default_value": "h2",
+              "wrapper": { "width": "25" }
+            },
+            {
+              "key": "field_faq_highlight",
+              "label": "Title Highlight",
+              "name": "title_highlight",
+              "type": "text",
+              "wrapper": { "width": "100" }
+            },
+            {
+              "key": "field_faq_desc",
+              "label": "Description",
+              "name": "description",
+              "type": "textarea",
+              "rows": 3,
+              "wrapper": { "width": "100" }
+            },
+            {
+              "key": "field_faq_btn_text",
+              "label": "Contact Button Text",
+              "name": "button_text",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_faq_btn_url",
+              "label": "Contact Button URL",
+              "name": "button_url",
+              "type": "text",
+              "wrapper": { "width": "50" }
+            },
+            {
+              "key": "field_faq_list",
+              "label": "FAQ Items",
+              "name": "faq_list",
+              "type": "repeater",
+              "layout": "block",
+              "button_label": "Add Question",
+              "sub_fields": [
+                {
+                  "key": "field_faq_item_num",
+                  "label": "Number",
+                  "name": "number",
+                  "type": "text",
+                  "instructions": "e.g. 01, 02",
+                  "wrapper": { "width": "15" }
+                },
+                {
+                  "key": "field_faq_item_q",
+                  "label": "Question",
+                  "name": "question",
+                  "type": "text",
+                  "wrapper": { "width": "70" }
+                },
+                {
+                  "key": "field_faq_item_open",
+                  "label": "Open by Default",
+                  "name": "is_open",
+                  "type": "true_false",
+                  "ui": 1,
+                  "wrapper": { "width": "15" }
+                },
+                {
+                  "key": "field_faq_item_a",
+                  "label": "Answer",
+                  "name": "answer",
+                  "type": "textarea",
+                  "rows": 3,
+                  "wrapper": { "width": "100" }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "button_label": "Add Section",
+      "min": "",
+      "max": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "page"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments"
+  ],
+  "active": true,
+  "description": "Flexible content sections for pages",
+  "acfe": {
+    "autosync": [
+      "json"
+    ]
+  },
+  "modified": 1790400000
+}

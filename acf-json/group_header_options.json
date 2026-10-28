@@ -1,0 +1,111 @@
+{
+  "key": "group_header_options",
+  "title": "Header Settings",
+  "fields": [
+    {
+      "key": "field_hdr_tab_topbar",
+      "label": "Top Bar Contact",
+      "type": "tab"
+    },
+    {
+      "key": "field_hdr_phone",
+      "label": "Phone Number",
+      "name": "header_phone",
+      "type": "text",
+      "instructions": "Display text (e.g. 0240-59 40 00)",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_hdr_phone_link",
+      "label": "Phone Tel Link",
+      "name": "header_phone_link",
+      "type": "text",
+      "instructions": "Callable link (e.g. tel:0240-594000)",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_hdr_email",
+      "label": "Email Address",
+      "name": "header_email",
+      "type": "text",
+      "instructions": "Contact email (e.g. info@giapremix.se)",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_hdr_tab_nav",
+      "label": "Logo & Search",
+      "type": "tab"
+    },
+    {
+      "key": "field_hdr_logo",
+      "label": "Brand Logo",
+      "name": "header_logo",
+      "type": "image",
+      "instructions": "Recommended size: 285x39 pixels (SVG or PNG)",
+      "return_format": "array",
+      "preview_size": "medium",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_hdr_search_placeholder",
+      "label": "Search Input Placeholder",
+      "name": "header_search_placeholder",
+      "type": "text",
+      "default_value": "Rechercher des produits...",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_hdr_tab_megamenu",
+      "label": "Mega Menu Banner",
+      "type": "tab"
+    },
+    {
+      "key": "field_hdr_megamenu_pill",
+      "label": "Bottom Bar Tag / Pill Text",
+      "name": "header_megamenu_pill",
+      "type": "text",
+      "default_value": "CATALOGUE COMPLET",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_hdr_megamenu_tagline",
+      "label": "Bottom Bar Tagline",
+      "name": "header_megamenu_tagline",
+      "type": "text",
+      "default_value": "Découvrez notre gamme complète d'équipements de sécurité industrielle",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_hdr_megamenu_btn_text",
+      "label": "Bottom Bar Button Text",
+      "name": "header_megamenu_btn_text",
+      "type": "text",
+      "default_value": "Voir tous les produits",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_hdr_megamenu_btn_url",
+      "label": "Bottom Bar Button URL",
+      "name": "header_megamenu_btn_url",
+      "type": "text",
+      "default_value": "#tous-les-produits",
+      "wrapper": { "width": "50" }
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "header-settings"
+      }
+    ]
+  ],
+  "active": true,
+  "acfe": {
+    "autosync": [
+      "json"
+    ]
+  },
+  "modified": 1793188963
+}

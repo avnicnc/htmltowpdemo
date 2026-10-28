@@ -1,0 +1,184 @@
+{
+  "key": "group_footer_options",
+  "title": "Footer Settings",
+  "fields": [
+    {
+      "key": "field_ftr_tab_contact",
+      "label": "Contact Strip",
+      "type": "tab"
+    },
+    {
+      "key": "field_ftr_contact_items",
+      "label": "Contact Strip Items",
+      "name": "footer_contact_items",
+      "type": "repeater",
+      "instructions": "4 items displayed in the top contact banner",
+      "layout": "block",
+      "button_label": "Add Contact Item",
+      "sub_fields": [
+        {
+          "key": "field_ftr_ci_icon",
+          "label": "Icon Image",
+          "name": "icon",
+          "type": "image",
+          "return_format": "array",
+          "preview_size": "thumbnail",
+          "wrapper": { "width": "20" }
+        },
+        {
+          "key": "field_ftr_ci_title",
+          "label": "Title",
+          "name": "title",
+          "type": "text",
+          "instructions": "e.g. Service client, Appelez-nous, Adresse",
+          "wrapper": { "width": "25" }
+        },
+        {
+          "key": "field_ftr_ci_sub",
+          "label": "Subtitle / Detail",
+          "name": "subtitle",
+          "type": "text",
+          "instructions": "e.g. Nous sommes là pour vous aider, +46 40-485 80",
+          "wrapper": { "width": "30" }
+        },
+        {
+          "key": "field_ftr_ci_url",
+          "label": "Link URL",
+          "name": "url",
+          "type": "text",
+          "instructions": "e.g. tel:+464048580 or mailto:info@giapremix.se",
+          "wrapper": { "width": "25" }
+        }
+      ]
+    },
+    {
+      "key": "field_ftr_tab_intro",
+      "label": "Main Footer Intro",
+      "type": "tab"
+    },
+    {
+      "key": "field_ftr_logo",
+      "label": "Footer Logo",
+      "name": "footer_logo",
+      "type": "image",
+      "instructions": "Recommended size: 300x62 pixels",
+      "return_format": "array",
+      "preview_size": "medium",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_ftr_intro_title",
+      "label": "Intro Heading",
+      "name": "footer_intro_title",
+      "type": "text",
+      "default_value": "Besoin d'aide pour choisir la bonne solution de sécurité ?",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_ftr_intro_desc",
+      "label": "Intro Description",
+      "name": "footer_intro_desc",
+      "type": "textarea",
+      "rows": 3,
+      "default_value": "Nos experts sont à votre disposition pour vous accompagner dans le choix des produits, vous fournir des conseils techniques et proposer des solutions personnalisées adaptées à vos besoins spécifiques.",
+      "wrapper": { "width": "100" }
+    },
+    {
+      "key": "field_ftr_quote_text",
+      "label": "Quote Button Text",
+      "name": "footer_quote_text",
+      "type": "text",
+      "default_value": "Obtenir un devis",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_ftr_quote_url",
+      "label": "Quote Button URL",
+      "name": "footer_quote_url",
+      "type": "text",
+      "default_value": "https://giapremix.se/kontakt/",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_ftr_tab_bottom",
+      "label": "Social & Bottom Bar",
+      "type": "tab"
+    },
+    {
+      "key": "field_ftr_social_links",
+      "label": "Social Links",
+      "name": "footer_social_links",
+      "type": "repeater",
+      "instructions": "Social icons displayed in the footer (Facebook, Instagram, LinkedIn, or custom)",
+      "layout": "block",
+      "button_label": "Add Social Link",
+      "sub_fields": [
+        {
+          "key": "field_ftr_soc_platform",
+          "label": "Platform / Icon Style",
+          "name": "platform",
+          "type": "select",
+          "choices": {
+            "facebook": "Facebook ('f')",
+            "instagram": "Instagram (Camera SVG)",
+            "linkedin": "LinkedIn ('in')",
+            "custom": "Custom Image"
+          },
+          "default_value": "facebook",
+          "wrapper": { "width": "25" }
+        },
+        {
+          "key": "field_ftr_soc_label",
+          "label": "Network Name / Label",
+          "name": "label",
+          "type": "text",
+          "instructions": "e.g. Facebook, Instagram, LinkedIn",
+          "wrapper": { "width": "25" }
+        },
+        {
+          "key": "field_ftr_soc_url",
+          "label": "Profile URL",
+          "name": "url",
+          "type": "text",
+          "instructions": "Leave blank to render non-clickable span",
+          "wrapper": { "width": "25" }
+        },
+        {
+          "key": "field_ftr_soc_img",
+          "label": "Custom Icon / Image",
+          "name": "icon_image",
+          "type": "image",
+          "instructions": "Upload custom image (optional)",
+          "return_format": "array",
+          "preview_size": "thumbnail",
+          "wrapper": { "width": "25" }
+        }
+      ]
+    },
+    {
+      "key": "field_ftr_copyright",
+      "label": "Copyright Text",
+      "name": "footer_copyright",
+      "type": "text",
+      "instructions": "Use %year% token for the dynamic current year (e.g. © %year% GIA Premix. Tous droits réservés.)",
+      "default_value": "© %year% GIA Premix. Tous droits réservés.",
+      "wrapper": { "width": "100" }
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "footer-settings"
+      }
+    ]
+  ],
+  "active": true,
+  "acfe": {
+    "autosync": [
+      "json"
+    ]
+  },
+  "modified": 1793189708
+}

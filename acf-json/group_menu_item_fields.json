@@ -1,0 +1,53 @@
+{
+  "key": "group_menu_item_fields",
+  "title": "Menu Item Settings",
+  "fields": [
+    {
+      "key": "field_menu_item_image",
+      "label": "Category Image",
+      "name": "menu_item_image",
+      "type": "image",
+      "instructions": "Image for mega menu category columns (e.g. Douches extérieures, Douches de sécurité, Accessoires, Yeux et visage).",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array",
+      "preview_size": "thumbnail",
+      "library": "all",
+      "min_width": "",
+      "min_height": "",
+      "min_size": "",
+      "max_width": "",
+      "max_height": "",
+      "max_size": "",
+      "mime_types": "png,jpg,jpeg,svg,webp"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "nav_menu_item",
+        "operator": "==",
+        "value": "all"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Custom fields for WordPress navigation menu items",
+  "acfe": {
+    "autosync": [
+      "json"
+    ]
+  },
+  "modified": 1793188748
+}

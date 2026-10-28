@@ -1,0 +1,266 @@
+/* ===== common ===== */
+/* =========================================================
+   Common CSS — Reusable cross-section utilities & components
+   ========================================================= */
+
+/* Container: 1568px with 24px padding using CSS variables */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+}
+
+/* Flex Utilities */
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-start {
+    display: flex;
+    align-items: flex-start;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------------------------------------------------------
+   Reusable Buttons (As described in template file Section 10)
+   --------------------------------------------------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    height: 52px;
+    padding: 0 24px;
+    font-size: var(--font-size-button);
+    font-weight: var(--font-weight-button);
+    border-radius: 160px;
+    line-height: 28px;
+    text-decoration: none;
+    transition: background-color 300ms ease, color 300ms ease;
+    cursor: pointer;
+    white-space: nowrap;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 154, 61, 0.35);
+}
+
+.btn-secondary {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border: 1.5px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+.btn-yellow {
+    background-color: var(--color-yellow);
+    color: var(--color-ink-900);
+}
+
+/* Slide the shared hover fill underneath text and icons. */
+.btn-yellow,
+.btn-white {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.btn-yellow::before,
+.btn-white::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--color-primary);
+    transform: translateX(-101%);
+    transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+}
+
+.btn-yellow:is(:hover, :focus-visible)::before,
+.btn-white:is(:hover, :focus-visible)::before {
+    transform: translateX(0);
+}
+
+.btn-yellow:hover,
+.btn-yellow:focus-visible {
+    text-decoration: none;
+    background-color: var(--color-yellow);
+    color: var(--color-ink-900);
+}
+
+.btn-white {
+    background-color: var(--color-white);
+    color: var(--color-ink-900);
+}
+
+.btn-white:hover,
+.btn-white:focus-visible {
+    background-color: var(--color-white);
+    color: var(--color-ink-900);
+    text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn,
+    .btn::before { transition: none; }
+}
+
+.btn-ghost {
+    background-color: transparent;
+    color: var(--color-ink-700);
+    border: 1.5px solid var(--color-ink-700);
+}
+
+.btn-ghost:hover {
+    background-color: var(--color-ink-900);
+    color: var(--color-white);
+}
+
+.btn-sm {
+    height: 38px;
+    padding: 0 16px;
+    font-size: var(--font-size-sm);
+}
+
+.btn-pill {
+    border-radius: var(--radius-pill);
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Figma CTA triangle: 25.98 × 17px, shared by every section. */
+.btn > img,
+.btn > svg,
+.btn .btn-icon img,
+.btn .btn-icon svg {
+    display: block;
+    width: 26px;
+    height: 17px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* Screen reader only utility */
+.scroll-to-top {
+    position: fixed;
+    right: max(24px, env(safe-area-inset-right));
+    bottom: max(24px, env(safe-area-inset-bottom));
+    z-index: 90;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 240ms ease, transform 240ms ease,
+        background-color 240ms ease, visibility 0s linear 240ms;
+}
+
+.scroll-to-top[hidden] { display: none; }
+.scroll-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+.scroll-to-top:hover { background: var(--color-primary-hover); transform: translateY(-3px); }
+.scroll-to-top:focus-visible { outline: 3px solid var(--color-yellow); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+    .scroll-to-top { transition: none; }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Reusable product artwork hover. Transforms keep card/grid geometry stable. */
+.product-hover .product-hover-media {
+    transition: transform var(--transition-smooth);
+    transform-origin: center;
+}
+@media (hover: hover) and (pointer: fine) {
+    .product-hover:hover .product-hover-media {
+        transform: translateY(calc(-1 * var(--space-xs))) scale(1.06);
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .product-hover .product-hover-media {
+        transition: none;
+        transform: none;
+    }
+}
+
+/* Shared vertical spacing for page sections. */
+.section-padding {
+    padding-block: 100px;
+}
+@media (max-width: 1199px) {
+    .section-padding { padding-block: var(--space-3xl); }
+}
+@media (max-width: 767px) {
+    .section-padding { padding-block: var(--space-2xl); }
+}

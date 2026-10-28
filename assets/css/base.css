@@ -1,0 +1,41 @@
+/* ===== base ===== */
+/* =========================================================
+   Base CSS — Global element defaults
+   ========================================================= */
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-body);
+    color: var(--color-ink-900);
+    background-color: var(--color-white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-heading);
+    color: var(--color-ink-900);
+    line-height: var(--line-height-tight);
+}
+
+p {
+    font-weight: var(--font-weight-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-ink-700);
+}
+
+strong,
+b {
+    font-weight: var(--font-weight-emphasis);
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
